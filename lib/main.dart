@@ -21,7 +21,7 @@ class _MyState extends State<MyApp> {
       home: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.lightBlue,
-            title: Text("Flutter Slider"),
+            title: Text(" Slider"),
           ),
           body: Container(
             height: 100,
@@ -34,8 +34,8 @@ class _MyState extends State<MyApp> {
               },
               min: 0,
               max: 10,
-              activeColor: Colors.green,
-              inactiveColor: Colors.green[100],
+              activeColor: Colors.blue,
+              inactiveColor: Colors.blue[100],
               label: val.round().toString(),
               divisions: 10,
             ),
