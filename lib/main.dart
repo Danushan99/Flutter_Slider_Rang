@@ -18,27 +18,42 @@ class _MyState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-              backgroundColor: Colors.lightBlue,
-              title: Text("Flutter Slider"),
+      home: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.lightBlue,
+            title: Text("Flutter Slider"),
+          ),
+          body: Container(
+            height: 100,
+            child: Slider(
+              value: val,
+              onChanged: (value) {
+                setState(() {
+                  val = value;
+                });
+              },
+              min: 0,
+              max: 10,
+              activeColor: Colors.green,
+              inactiveColor: Colors.green[100],
+              label: val.round().toString(),
+              divisions: 10,
             ),
-            body: Container(
-              height: 100,
-              child: Slider(
-                value: val,
-                onChanged: (value) {
-                  setState(() {
-                    val = value;
-                  });
-                },
-                min: 0,
-                max: 10,
-                activeColor: Colors.green,
-                inactiveColor: Colors.green[100],
-                label: val.round().toString(),
-                divisions: 10,
-              ),
-            )));
+          )),
+    );
   }
+
+  // slider without range
+  // Slider(
+  //             value: val,
+  //             onChanged: (value) {
+  //               setState(() {
+  //                 val = value;
+  //               });
+  //             },
+  //             min: 1,
+  //             max: 10,
+  //             activeColor: Colors.green,
+  //             inactiveColor: Colors.green[100],
+  //           )
 }
